@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: monospace;
+    background: #eeeeee;
+    min-height: 100vh;
+    display: flex;
+}
+
+.main-content {
+    margin-left: 180px;
+    padding: 40px;
+    width: calc(100% - 180px);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.project-container {
+    max-width: 1200px;
+}
+
+.project-image-container {
+    display: block;
+    line-height: 0;
+    margin-bottom: 40px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-info {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.info-box {
+    padding: 10px;
+    font-size: 12px;
+    line-height: normal;
+    flex: 1;
+}
+
+.project-title {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 16px;
+}
+
+.project-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.visit-site {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.visit-site:hover {
+    text-decoration: underline;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.bottom-nav a:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: monaco;
+    src: url(../Monaco.ttf);
+}

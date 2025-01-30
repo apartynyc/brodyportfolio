@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: monospace;
+    background: #eeeeee;
+    min-height: 100vh;
+}
+
+.main-content {
+    margin-left: 180px;
+    padding: 0;
+    width: calc(100% - 180px);
+    min-height: 100vh;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 100%;
+}
+
+.gallery-item {
+    display: block;
+    line-height: 0;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: bottom;
+}
+
+.gallery-item-title {
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 12px;
+    line-height: normal;
+    background: white;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+}
+
+.gallery-item a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.gallery-item a:hover .gallery-item-title {
+    text-decoration: underline;
+}
+
+.gallery-item-title:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 60px; /* Space for fixed top nav */
+        width: 100%;
+        padding: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@font-face {
+    font-family: monaco;
+    src: url(../Monaco.ttf);
+}

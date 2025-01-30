@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: monospace;
+    background: #eeeeee;
+    min-height: 100vh;
+    display: flex;
+}
+
+.main-content {
+    margin-left: 180px;
+    padding: 40px;
+    width: calc(100% - 180px);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.business-list {
+    padding-top: 200px;
+}
+
+.business-item {
+    position: relative;
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+}
+
+.business-name {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.business-name:hover {
+    text-decoration: underline;
+}
+
+.hover-image {
+    position: absolute;
+    bottom: 70%;
+    left: 0;
+    width: 300px;
+    height: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-bottom:0px;
+}
+
+.business-item:hover .hover-image {
+    opacity: 1;
+}
+
+@font-face {
+    font-family: monaco;
+    src: url(../Monaco.ttf);
+}

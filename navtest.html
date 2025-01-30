@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Title - Brody Gray</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background: #eeeeee;
+            min-height: 100vh;
+            display: flex;
+            overflow-y: auto;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 180px;
+            height: 100vh;
+            padding: 20px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #000;
+        }
+
+        .site-title {
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .work-dropdown {
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 30px;
+            left: 16px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .work-dropdown.active {
+            height: 60px;
+        }
+
+        .work-dropdown.active ~ a {
+            transform: translateY(60px);
+        }
+
+        .subscribe {
+            margin-top: auto;
+        }
+
+        .subscribe a {
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+
+        .subscribe a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            margin-left: 180px;
+            padding: 40px;
+            width: calc(100% - 180px);
+        }
+
+        .project-container {
+            max-width: 1200px;
+        }
+
+        .main-heading {
+            text-decoration: line-through;
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .project-image-container {
+            display: block;
+            line-height: 0;
+            border: 1px solid black;
+            margin-bottom: 40px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-info {
+            display: flex;
+            gap: 40px;
+        }
+
+        .info-box {
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 12px;
+            line-height: normal;
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 16px;
+        }
+
+        .project-description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .visit-site {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .visit-site:hover {
+            text-decoration: underline;
+        }
+
+        .project-nav {
+            margin-top: 80px;
+            border-top: 1px solid black;
+            padding-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .nav-item {
+            border: 1px solid black;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .nav-item-title {
+            border-top: 1px solid black;
+            padding: 10px;
+            font-size: 12px;
+            line-height: normal;
+        }
+
+        .nav-item:hover .nav-item-title {
+            text-decoration: underline;
+        }
+
+        .nav-item.current {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor"></div>
+    
+    <nav class="nav">
+        <h1 class="site-title">Brody Gray</h1>
+        <div class="nav-links">
+            <a href="#" class="work-link">Work</a>
+            <div class="work-dropdown">
+                <a href="index.html">Design</a>
+                <a href="./html/business.html">Business</a>
+            </div>
+            
+            <a href="information.html" data-page="about">Information</a>
+            <a href="connect.html" data-page="contact">Connect</a>
+        </div>
+        <div class="subscribe">
+            <a href="coolspin copy.html">change style.</a>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <div class="project-container">
+            <span class="main-heading">Project Title</span>
+            <div class="project-image-container">
+                <img src="apaimg.png" alt="Project Title" class="project-image">
+            </div>
+            <div class="project-info">
+                <div class="info-box">
+                    <h1 class="project-title">Project Title</h1>
+                    <p class="project-description">
+                        This is where you can add your project description. Describe the concept, 
+                        process, and any other relevant details about the work.
+                    </p>
+                    <a href="#" class="visit-site">Visit Site →</a>
+                </div>
+                <div class="info-box">
+                    <h2 class="project-title">Project Details</h2>
+                    <p class="project-description">
+                        Year: 2024<br>
+                        Client: Client Name<br>
+                        Role: Design, Development
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-nav">
+                <a href="aparty.html" class="nav-item current">
+                    <img src="apaimg.png" alt="A Party">
+                    <div class="nav-item-title">A Party</div>
+                </a>
+                <a href="riley.html" class="nav-item">
+                    <img src="rilimg.png" alt="Riley Portfolio">
+                    <div class="nav-item-title">Riley Portfolio</div>
+                </a>
+                <a href="isobel.html" class="nav-item">
+                    <img src="isoimg.png" alt="Isobel Portfolio">
+                    <div class="nav-item-title">Isobel Portfolio</div>
+                </a>
+                <a href="super.html" class="nav-item">
+                    <img src="supimg.png" alt="Super Project">
+                    <div class="nav-item-title">Super Project</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/cursor.js"></script>
+</body>
+</html>
