@@ -75,7 +75,6 @@ body {
     text-decoration: underline;
 }
 
-/* Simplified bottom navigation */
 .bottom-nav {
     display: flex;
     justify-content: space-between;
@@ -90,6 +89,39 @@ body {
 
 .bottom-nav a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 60px; /* Height of mobile nav */
+        padding: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .project-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-box {
+        padding: 0;
+    }
+
+    .project-image-container {
+        margin-bottom: 20px;
+    }
+
+    .bottom-nav {
+        margin-top: 20px;
+        padding: 20px 0;
+    }
 }
 
 @font-face {

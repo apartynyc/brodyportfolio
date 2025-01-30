@@ -8,166 +8,195 @@
     <link rel="stylesheet" href="/styles/cursor.css">
     
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    cursor: none;
-}
+               * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
 
-body {
-    font-family: monospace;
-    background: white;
-    min-height: 100vh;
-    padding-left: 180px; /* Account for nav width */
-}
+        body {
+            font-family: monospace;
+            background: white;
+            min-height: 100vh;
+            padding-left: 180px;
+        }
 
-.page-section {
-    padding: 64px;
-    width: 800px;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-left: 90px; /* Half the nav width to offset the centering calculation */
-}
+        .page-section {
+            padding: 64px;
+            width: 800px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-left: 90px;
+        }
 
-/* Rest of your CSS stays the same */
+        .form-header {
+            margin-bottom: 48px;
+        }
 
-.form-header {
-    margin-bottom: 48px;
-}
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            font-weight: normal;
+            font-family: monospace;
+        }
 
-.form-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    font-weight: normal;
-    font-family: monospace;
-}
+        .form-description {
+            font-size: 1rem;
+            color: #666;
+            font-family: monospace;
+            margin-bottom: 2rem;
+        }
 
-.form-description {
-    font-size: 1rem;
-    color: #666;
-    font-family: monospace;
-    margin-bottom: 2rem;
-}
+        .form-container {
+            border: 1px solid #000;
+            padding: 40px;
+            background: white;
+        }
 
-.form-container {
-    border: 1px solid #000;
-    padding: 40px;
-    background: white;
-}
+        .form-group {
+            margin-bottom: 24px;
+        }
 
-.form-group {
-    margin-bottom: 24px;
-}
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
 
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: monospace;
-    font-size: 0.9rem;
-}
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #000;
+            font-family: monospace;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
 
-.form-input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #000;
-    font-family: monospace;
-    font-size: 1rem;
-    background: white;
-    transition: all 0.3s ease;
-}
+        .form-input:focus {
+            outline: none;
+            border-color: #666;
+        }
 
-.form-input:focus {
-    outline: none;
-    border-color: #666;
-}
+        .form-input::placeholder {
+            color: #999;
+        }
 
-.form-input::placeholder {
-    color: #999;
-}
+        .optional-label {
+            color: #666;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
 
-.optional-label {
-    color: #666;
-    font-size: 0.8rem;
-    margin-left: 8px;
-}
+        .website-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
 
-.website-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
-}
+        .website-option {
+            border: 1px solid #000;
+            padding: 16px;
+            text-align: center;
+            cursor: none;
+            transition: all 0.3s ease;
+        }
 
-.website-option {
-    border: 1px solid #000;
-    padding: 16px;
-    text-align: center;
-    cursor: none;
-    transition: all 0.3s ease;
-}
+        .website-option.selected {
+            background: #000;
+            color: white;
+        }
 
-.website-option.selected {
-    background: #000;
-    color: white;
-}
+        .website-option-title {
+            font-family: monospace;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
 
-.website-option-title {
-    font-family: monospace;
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-}
+        .website-option-price {
+            font-family: monospace;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
 
-.website-option-price {
-    font-family: monospace;
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-}
+        .website-option-description {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #666;
+        }
 
-.website-option-description {
-    font-family: monospace;
-    font-size: 0.8rem;
-    color: #666;
-}
+        textarea.form-input {
+            min-height: 120px;
+            resize: vertical;
+        }
 
-textarea.form-input {
-    min-height: 120px;
-    resize: vertical;
-}
+        .submit-button {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-family: monospace;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            cursor: none;
+        }
 
-.submit-button {
-    background: #000;
-    color: white;
-    border: none;
-    padding: 16px 32px;
-    font-family: monospace;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    width: 100%;
-    cursor: none;
-}
+        .submit-button:hover {
+            background: #333;
+        }
 
-.submit-button:hover {
-    background: #333;
-}
+        @media (max-width: 768px) {
+            body {
+                padding-left: 0;
+            }
 
-@media (max-width: 1024px) {
-    .page-section {
-        padding: 32px;
-        padding-left: 64px;
-    }
+            .page-section {
+                padding: 20px;
+                width: 100%;
+                max-width: 500px;
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin: 80px auto 0;
+            }
 
-    .website-options {
-        grid-template-columns: 1fr;
-    }
+            .form-container {
+                padding: 20px;
+            }
 
-    .form-container {
-        padding: 24px;
-    }
-}
+            .form-header {
+                margin-bottom: 24px;
+            }
+
+            .form-title {
+                font-size: 1.4rem;
+            }
+
+            .website-options {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .website-option {
+                padding: 12px;
+            }
+
+            .form-group {
+                margin-bottom: 16px;
+            }
+
+            .form-input {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -186,7 +215,7 @@ textarea.form-input {
                 <a href="/html/business.html">Business</a>
             </div>
             <a href="/html/information.html" class="active">Information</a>
-            <a href="/html/connect.html">Connect</a>
+            <a href="/html/makeyoursite.html">Need a Site?</a>
         </div>
         <div class="subscribe">
             <a href="mailto:brodybeckettgray@gmail.com">email</a>
@@ -194,6 +223,7 @@ textarea.form-input {
             <a>New York, NY</a>
         </div>
     </nav>
+    
 
 
     <section class="page-section">

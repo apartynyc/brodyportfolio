@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     cursor: none;
+    overflow: hidden;
 }
 
 body {
@@ -10,7 +11,6 @@ body {
     display: flex;
     background: #eeeeee;
     font-family: monospace;
-    overflow: hidden;
 }
 
 .main-content {
@@ -18,24 +18,7 @@ body {
     padding: 40px;
     width: calc(100% - 180px);
     height: 100vh;
-    overflow-y: auto;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-
-
-
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
+    overflow-y: hidden;
 }
 
 .section-title {
@@ -48,4 +31,22 @@ body {
     max-width: 600px;
     line-height: 1.6;
     font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 60px;
+        padding: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .section-title {
+        margin-bottom: 20px;
+    }
 }
