@@ -1,8 +1,14 @@
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     cursor: none;
+}
+
+@font-face {
+    font-family: monaco;
+    src: url(../Monaco.ttf);
 }
 
 body {
@@ -13,6 +19,7 @@ body {
     min-height: 100vh;
 }
 
+/* Main Content and Gallery Styles */
 .main-content {
     margin-left: 180px;
     padding: 0;
@@ -66,6 +73,27 @@ body {
     text-decoration: underline;
 }
 
+/* Section Headers */
+.section-header {
+    font-family: monospace;
+    font-size: 14px;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.gallery-section {
+    margin-bottom: 60px;
+}
+
+.gallery-section:first-child .section-header {
+    margin-top: 0;
+}
+
+/* Custom Cursor Styles */
+
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     body {
         padding: 20px;
@@ -73,7 +101,7 @@ body {
 
     .main-content {
         margin-left: 0;
-        margin-top: 60px; /* Space for fixed top nav */
+        margin-top: 60px;
         width: 100%;
         padding: 20px;
     }
@@ -82,9 +110,12 @@ body {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-}
 
-@font-face {
-    font-family: monaco;
-    src: url(../Monaco.ttf);
+    .section-header {
+        margin: 30px 0 15px;
+    }
+
+    .gallery-section {
+        margin-bottom: 40px;
+    }
 }
